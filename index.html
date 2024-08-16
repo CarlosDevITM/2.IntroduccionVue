@@ -8,8 +8,12 @@
 <body>
     
     <div id="myApp">
-        <h1>Batman quotes</h1>
+        <h1>Batman quotes {{totalQuotes}}</h1>
+        <input id="caja"type="text" placeholder="Add quote" @keypress.enter="addQuote()">
         <button v-on:click="toggleAuthor">Toggle Authors</button>
+
+        <button v-on:click="addQuote">Add Quote</button>
+
         <hr>
 
         <!--Inicio de VFOR para crear elementos de una lista-->
