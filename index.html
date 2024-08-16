@@ -9,6 +9,7 @@
     
     <div id="myApp">
         <h1>Batman quotes</h1>
+        <button v-on:click="toggleAuthor">Toggle Authors</button>
         <hr>
 
         <!--Inicio de VFOR para crear elementos de una lista-->
@@ -17,7 +18,9 @@
             <!-- NOTA: El index es parte del v-for-->
             <li v-for="({quote, author},index) in quotes">
                 <span>{{index + 1}}-{{quote}}</span>
-                <blockquote>{{author}}</blockquote>
+                <!--<blockquote>{{author}}</blockquote> -->
+
+                <blockquote v-if="showAuthor">{{author}}</blockquote>
             </li>
         </ul>
     </div>

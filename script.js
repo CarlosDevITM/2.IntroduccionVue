@@ -7,13 +7,18 @@ const quotes = [
     { quote: 'Yes, father. I shall become a bat.', author: 'Bruce Wayne/Batman, Batman: Year One' },
 ]
 
-const {createApp} = Vue;
+const {createApp, ref} = Vue;
 
 const app = createApp({
     setup(){
+    const showAuthor = ref(false);
+
+    const toggleAuthor = ()=>{
+        showAuthor.value = !showAuthor.value
+    }
 
         return {
-            quotes
+            quotes, showAuthor, toggleAuthor
         }
 
     }
