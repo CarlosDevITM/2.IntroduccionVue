@@ -15,6 +15,7 @@ const app = createApp({
 
     //Variable reactiva
     const quotes = ref(originalQuotes)
+    const newMessage = ref('')
 
     //Variable computada
     const totalQuotes = computed(()=>{
@@ -27,11 +28,15 @@ const app = createApp({
 
     //Add quote
     const addQuote = ()=>{
-        quotes.value.unshift({quote: 'Hola mundo' , author: 'Carlos'})
+        if(newMessage.value != ''){
+            quotes.value.unshift({quote: newMessage.value.trim() , author: 'Carlos'})
+        }
+
+        newMessage.value = ''
     }
 
         return {
-            quotes, showAuthor, toggleAuthor, addQuote, totalQuotes
+            quotes, showAuthor, newMessage, toggleAuthor, addQuote, totalQuotes
         }
 
     }

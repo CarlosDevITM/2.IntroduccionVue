@@ -9,7 +9,7 @@
     
     <div id="myApp">
         <h1>Batman quotes {{totalQuotes}}</h1>
-        <input id="caja"type="text" placeholder="Add quote" @keypress.enter="addQuote()">
+        <input id="caja"type="text" placeholder="Add quote" @keypress.enter="addQuote()" v-model="newMessage">
         <button v-on:click="toggleAuthor">Toggle Authors</button>
 
         <button v-on:click="addQuote">Add Quote</button>
